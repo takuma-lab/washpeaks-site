@@ -21,7 +21,7 @@ OPENAI_MODEL = "gpt-4.1-mini"
 # 公開サイトのURL（確認ページのデザイン読み込みと、公開後のリンクに使う）
 SITE_URL = "https://washpeaks.pages.dev"
 # 記事を置く GitHub リポジトリ（ユーザー名/リポジトリ名）
-GITHUB_REPO = "ユーザー名/washpeaks-site"
+GITHUB_REPO = "takuma-lab/washpeaks-site"
 GITHUB_BRANCH = "main"
 # site.json の blog.categories と同じにする
 CATEGORIES = "お知らせ,導入事例,コラム,開業ノウハウ"
