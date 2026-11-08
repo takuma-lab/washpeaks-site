@@ -280,6 +280,17 @@ def build(posts):
         + "".join(f"  <url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
 
+    # 検索除外（site.json の "noindex": true の間）。
+    # robots.txt でクロール自体は許可し、各ページの noindex 指定を検索エンジンに読ませる
+    if SITE.get("noindex"):
+        (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
+        (DIST / "sitemap.xml").unlink()
+        (DIST / "_headers").write_text("/*\n  X-Robots-Tag: noindex, nofollow\n", encoding="utf-8")
+        for f in DIST.rglob("*.html"):
+            t = f.read_text(encoding="utf-8")
+            f.write_text(t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="robots" content="noindex, nofollow">', 1), encoding="utf-8")
+        print("検索除外モード（site.json の noindex を false にすると解除）")
+
     leftover = [str(f.relative_to(DIST)) for f in DIST.rglob("*.html") if "{{" in f.read_text(encoding="utf-8")]
     if leftover:
         print("警告: 置換されていない {{...}} が残っています: " + ", ".join(leftover))

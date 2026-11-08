@@ -40,6 +40,7 @@ python3 -m http.server -d dist 8000   # http://localhost:8000 で確認
 | ブログ記事を追加 | `content/blog/` に .md と画像を追加 |
 | メニュー項目の変更 | `site.json` の `nav` |
 | ブログのカテゴリ追加 | `site.json` の `blog.categories` |
+| 検索エンジンへの掲載 | `site.json` の `noindex`（`true` = 検索除外中。正式公開時に `false`） |
 | ヘッダー・フッターの変更 | `src/partials/*.html` |
 | 各ページの文章 | `src/pages/*.html` |
 | デザイン | `src/assets/css/style.css` |
