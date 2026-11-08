@@ -11,7 +11,7 @@ fallthrough = true
 # 下書き・写真の一時保存（npx wrangler kv namespace create KV で作成し、id を書き換える）
 [[kv_namespaces]]
 binding = "KV"
-id = "ここにKVのIDを貼り付け"
+id = "64f4c76090064e6982c1351dfa86e9f1"
 
 [vars]
 # 記事を書くAI: "gemini" または "openai"
