@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>無料相談・お問い合わせ｜Wash Peaks</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-section="contact.html">
+{{header}}
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url(img/towel-r.jpg)"></div>
+    <div class="wrap">
+      <p class="en">Contact</p>
+      <h1>無料相談・お問い合わせ</h1>
+      <p>内製化・開業・機器レンタルなど、どんなことでもお気軽にご相談ください。担当者より2営業日以内にご連絡します。</p>
+    </div>
+  </section>
+  <div class="wrap breadcrumb"><a href="index.html">TOP</a> ／ 無料相談・お問い合わせ</div>
+
+  <section class="section">
+    <div class="wrap">
+      <form class="form" data-demo data-done="contact-done" novalidate>
+        <div class="field">
+          <label for="type">ご相談内容<span class="req">必須</span></label>
+          <select id="type" name="type" required>
+            <option value="">選択してください</option>
+            <option value="inhouse">業務用洗濯の内製化について</option>
+            <option value="coin">コインランドリー開業について</option>
+            <option value="rental">機器レンタルについて</option>
+            <option value="price">料金・お見積りについて</option>
+            <option value="recruit">採用について</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="company">会社名・施設名</label>
+          <input id="company" name="company" type="text" placeholder="株式会社○○">
+        </div>
+        <div class="field">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input id="name" name="name" type="text" required placeholder="山田 太郎">
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input id="email" name="email" type="email" required placeholder="example@example.com">
+        </div>
+        <div class="field">
+          <label for="tel">電話番号</label>
+          <input id="tel" name="tel" type="tel" placeholder="000-0000-0000">
+        </div>
+        <div class="field">
+          <label for="msg">ご相談内容の詳細<span class="req">必須</span></label>
+          <textarea id="msg" name="msg" required placeholder="現在の課題やご質問をご記入ください"></textarea>
+        </div>
+        <p style="font-size:13px;color:var(--text-sub)">送信いただいた個人情報は<a href="privacy.html" style="color:var(--gold)">プライバシーポリシー</a>に基づき適切に取り扱います。</p>
+        <div class="submit"><button class="btn btn-gold" type="submit">送信する <span class="arrow"></span></button></div>
+      </form>
+      <div class="form-done" id="contact-done" hidden>
+        <h2>お問い合わせありがとうございます</h2>
+        <p>内容を確認のうえ、担当者より2営業日以内にご連絡いたします。</p>
+        <p style="margin-top:24px"><a class="btn btn-outline" href="index.html">トップへ戻る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="line">
+    <div class="wrap" style="text-align:center;max-width:680px">
+      <h2 class="section-title">LINEで相談する<small>LINE</small></h2>
+      <p style="color:var(--text-sub)">LINE公式アカウントを友だち追加いただくと、チャットで気軽にご相談いただけます。写真を送っていただければ、設備の状況もすぐに確認できます。</p>
+      <p style="margin-top:28px"><a class="btn btn-line" href="#line">LINEで友だち追加（準備中）</a></p>
+    </div>
+  </section>
+</main>
+
+{{footer}}
+<script src="js/common.js"></script>
+<script>
+  // ?type=recruit などで相談内容を初期選択
+  var t = new URLSearchParams(location.search).get("type");
+  if (t) document.getElementById("type").value = t;
+</script>
+</body>
+</html>

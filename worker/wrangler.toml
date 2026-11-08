@@ -1,0 +1,35 @@
+name = "washpeaks-line-bot"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# prompt.md を文字列として読み込む
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
+
+# 下書き・写真の一時保存（npx wrangler kv namespace create KV で作成し、id を書き換える）
+[[kv_namespaces]]
+binding = "KV"
+id = "ここにKVのIDを貼り付け"
+
+[vars]
+# 記事を書くAI: "gemini" または "openai"
+AI_PROVIDER = "gemini"
+GEMINI_MODEL = "gemini-2.5-flash"
+OPENAI_MODEL = "gpt-4.1-mini"
+# 公開サイトのURL（確認ページのデザイン読み込みと、公開後のリンクに使う）
+SITE_URL = "https://washpeaks.pages.dev"
+# 記事を置く GitHub リポジトリ（ユーザー名/リポジトリ名）
+GITHUB_REPO = "ユーザー名/washpeaks-site"
+GITHUB_BRANCH = "main"
+# site.json の blog.categories と同じにする
+CATEGORIES = "お知らせ,導入事例,コラム,開業ノウハウ"
+
+# 秘密情報は npx wrangler secret put <名前> で登録（このファイルには書かない）
+#   LINE_CHANNEL_SECRET
+#   LINE_CHANNEL_ACCESS_TOKEN
+#   REGISTER_CODE        LINEで「登録 ○○」と送るときの合言葉
+#   GEMINI_API_KEY       （AI_PROVIDER=gemini のとき）
+#   OPENAI_API_KEY       （AI_PROVIDER=openai のとき）
+#   GITHUB_TOKEN         リポジトリの Contents: Read and write 権限を持つトークン

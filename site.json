@@ -1,0 +1,18 @@
+{
+  "name": "Wash Peaks",
+  "company": "株式会社 Wash Peaks",
+  "url": "https://washpeaks.pages.dev",
+  "nav": [
+    { "href": "services.html", "label": "サービス" },
+    { "href": "cases.html", "label": "導入事例" },
+    { "href": "plans.html", "label": "料金・プラン" },
+    { "href": "blog/index.html", "label": "ブログ" },
+    { "href": "company.html", "label": "会社情報" },
+    { "href": "recruit.html", "label": "採用情報" }
+  ],
+  "blog": {
+    "title": "ブログ・お知らせ",
+    "categories": ["お知らせ", "導入事例", "コラム", "開業ノウハウ"],
+    "home_latest": 3
+  }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>資料ダウンロード｜Wash Peaks</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-section="download.html">
+{{header}}
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url(img/s1.jpg)"></div>
+    <div class="wrap">
+      <p class="en">Download</p>
+      <h1>資料ダウンロード</h1>
+      <p>サービス概要や導入事例をまとめた資料を無料でお届けします。ご希望の資料を選んで、フォームを送信してください。</p>
+    </div>
+  </section>
+  <div class="wrap breadcrumb"><a href="index.html">TOP</a> ／ 資料ダウンロード</div>
+
+  <section class="section">
+    <div class="wrap">
+      <form data-demo data-done="dl-done" novalidate>
+        <h2 class="section-title">ご希望の資料<small>DOCUMENTS</small></h2>
+        <div class="doc-list" data-need-check>
+          <label class="doc"><input type="checkbox" name="doc" value="overview" checked><div><b>サービス総合案内</b><span>Wash Peaksの全サービスと強みをまとめた資料</span></div></label>
+          <label class="doc"><input type="checkbox" name="doc" value="inhouse"><div><b>内製化ガイドブック</b><span>コスト試算の方法と導入までの流れ</span></div></label>
+          <label class="doc"><input type="checkbox" name="doc" value="coin"><div><b>コインランドリー開業ガイド</b><span>収支モデルと開業ステップを解説</span></div></label>
+        </div>
+
+        <div class="form">
+          <div class="field">
+            <label for="company">会社名・施設名<span class="req">必須</span></label>
+            <input id="company" type="text" required placeholder="株式会社○○">
+          </div>
+          <div class="field">
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input id="name" type="text" required placeholder="山田 太郎">
+          </div>
+          <div class="field">
+            <label for="email">メールアドレス<span class="req">必須</span></label>
+            <input id="email" type="email" required placeholder="example@example.com">
+            <p style="font-size:12px;color:var(--text-sub);margin-top:6px">資料のダウンロードURLをお送りします。</p>
+          </div>
+          <div class="field">
+            <label>業種</label>
+            <div class="checks">
+              <label><input type="radio" name="industry"> 旅館・ホテル</label>
+              <label><input type="radio" name="industry"> 工場・施設</label>
+              <label><input type="radio" name="industry"> 介護・医療</label>
+              <label><input type="radio" name="industry"> 個人・開業検討</label>
+              <label><input type="radio" name="industry"> その他</label>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--text-sub)">送信いただいた個人情報は<a href="privacy.html" style="color:var(--gold)">プライバシーポリシー</a>に基づき適切に取り扱います。</p>
+          <div class="submit"><button class="btn btn-gold" type="submit">資料を請求する <span>⤓</span></button></div>
+        </div>
+      </form>
+      <div class="form-done" id="dl-done" hidden>
+        <h2>資料請求ありがとうございます</h2>
+        <p>ご入力のメールアドレス宛に、ダウンロードURLをお送りしました。</p>
+        <p style="margin-top:24px"><a class="btn btn-gold" href="contact.html">無料相談もお気軽に <span class="arrow"></span></a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{footer}}
+<script src="js/common.js"></script>
+</body>
+</html>
