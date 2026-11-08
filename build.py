@@ -243,10 +243,13 @@ def build(posts):
     for page in sorted((SRC / "pages").glob("*.html")):
         tpl = page.read_text(encoding="utf-8")
         sec = re.search(r'data-section="([^"]+)"', tpl)
-        values = common("", sec.group(1) if sec else page.name)
+        # 404 ページはどの階層の URL でも表示されるため、リンクを絶対パスにする
+        root = "/" if page.name == "404.html" else ""
+        values = common(root, sec.group(1) if sec else page.name)
         values["latest_posts"] = latest
         (DIST / page.name).write_text(fill(tpl, values), encoding="utf-8")
-        pages.append(page.name)
+        if page.name != "404.html":
+            pages.append(page.name)
 
     blog = DIST / "blog"
     blog.mkdir()
